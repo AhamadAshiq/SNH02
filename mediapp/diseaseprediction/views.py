@@ -175,13 +175,15 @@ def makepredictions(path):
         rgb_img.paste(img_d)
     else:
         rgb_img = img_d
-
+# Assuming the image is 255x255 pixels with 3 color channels (RGB)
     rgb_img = np.array(rgb_img, dtype=np.float64)
-    rgb_img = rgb_img.reshape(-1, 255, 255, 3)
+    rgb_img = rgb_img.reshape(1, 255, 255, 3)  # Reshape for prediction
 
     predictions = model.predict(rgb_img)
     result_names = ["glioma", "meningioma", "notumor", "pituitary"]
     prediction_index = int(np.argmax(predictions))
+    predicted_label = result_names[prediction_index]
+
 
     result_folder_name = result_names[prediction_index]
 

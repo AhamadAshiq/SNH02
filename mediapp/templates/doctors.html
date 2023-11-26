@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+{%  extends "base.html" %}
+{% load static %}
+{% block content %}
 <html>
 
 <head>
@@ -61,19 +63,19 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Home </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html"> About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="departments.html">Departments</a>
+                <a class="nav-link" href="{% url 'home' %}">Home </a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="doctors.html">Doctors <span class="sr-only">(current)</span> </a>
+                <a class="nav-link" href="{% url 'about' %}"> About <span class="sr-only">(current)</span> </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
+                <a class="nav-link" href="{% url 'department' %}">Departments</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'doctors' %}">Doctors</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
               </li>
               <form class="form-inline">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
@@ -97,14 +99,14 @@
           Our Doctors
         </h2>
         <p class="col-md-10 mx-auto px-0">
-          We Have the Best Doctors
+          Discover expert care in our Doctors Section. Connect with experienced professionals for virtual consultations, advice, and support. Your health, our priority.
         </p>
       </div>
       <div class="row">
         <div class="col-sm-6 col-lg-4 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/d1.jpg" alt="">
+              <img src="{% static 'images/d1.jpg' %}" alt="">
             </div>
             <div class="detail-box">
               <div class="social_box">
@@ -133,7 +135,7 @@
         <div class="col-sm-6 col-lg-4 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/d2.jpg" alt="">
+              <img src="{% static 'images/d2.jpg' %}" alt="">
             </div>
             <div class="detail-box">
               <div class="social_box">
@@ -162,7 +164,7 @@
         <div class="col-sm-6 col-lg-4 mx-auto">
           <div class="box">
             <div class="img-box">
-              <img src="images/d3.jpg" alt="">
+              <img src="{% static 'images/d3.jpg' %}" alt="">
             </div>
             <div class="detail-box">
               <div class="social_box">
@@ -212,19 +214,19 @@
               <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                  Location
+                  Moodbidre
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                 9164885613
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                  medisearchai@gmail.com
                 </span>
               </a>
             </div>
@@ -293,9 +295,9 @@
       <div class="footer-info">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates<br><br></a>
+          <a href="https://html.design/">YENIGMA<br><br></a>
             &copy; <span id="displayYear"></span> Distributed By
-            <a href="https://themewagon.com/">ThemeWagon</a>
+            <a href="https://themewagon.com/">YENIGMA</a>
         </p>
       </div>
     </div>
@@ -320,5 +322,5 @@
   <!-- End Google Map -->
 
 </body>
-
+{%endblock%}
 </html>
